@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Climate Action Gallery</title>
+<style>
+		h1 {
+            text-align: center;
+            margin-top: 20px;
+			color: white;
+        }
+		
+		body {
+			font-family: Arial, sans-serif;
+			color: white;
+		}
+		
+        
+		.gallery-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .thumbnails {
+            text-align: center;
+            width: 300px; 
+            margin-bottom: 20px; 
+            position: relative; 
+        }
+
+        .thumbnails img {
+			width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: transform 0.3s ease; 
+        }
+
+        .thumbnails::before {
+            content: ''; 
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 4px solid transparent; 
+            transition: border-color 0.3s ease; 
+        }
+
+        .thumbnails:hover::before {
+            border-color: #90EE90; 
+        }
+		
+		.expanded-view {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(0, 0, 0, 0.8);
+			display: none;
+			justify-content: center;
+			align-items: center;
+			z-index: 1000;
+		}
+		
+		.expanded-view-content {
+			background-color: white;
+			padding: 20px;
+			max-width: 80%;
+			overflow: auto;
+			text-align: center;
+			color: black;
+		}
+
+		.expanded-view-content h2 {
+			text-align: center;
+			color: black;
+		}
+
+		.expanded-view-content p {
+			text-align: left; 
+		}
+		
+		.close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+			background-color: white;
+        }
+		
+		.expanded-view img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+			max-height: 60vh;
+        }
+		
+		.video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+		
+		.logo img {
+			height: 80px;
+			margin-left: 20px;
+		}
+		
+		header {
+			background-color: transparent;
+			color: #fff;
+			padding: 10px 0;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		nav ul {
+			list-style: none;
+			display: flex;
+			margin-right: 20px;
+		}
+
+		nav ul li {
+			margin: 10px;
+		}
+
+		nav ul li a {
+			color: #fff;
+			text-decoration: none;
+			padding: 5px 10px;
+		}
+
+		nav ul li a:hover {
+			background-color: #333;
+			border-radius: 100px;
+		}
+
+
+		nav ul li.active a {
+			border-bottom: solid ;
+			border-color: white;
+			border-radius: 100px;
+		}
+		footer {
+    		background-color: transparent;
+    		color: #fff;
+    		text-align: center;
+    		padding: 10px 0;
+    		position:relative;
+    		width: 100%;
+    		bottom: 0;
+		}
+
+		
+</style>
+</head>
+<body>
+<video class="video" autoplay loop muted>
+        <source src="climate.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+</video>
+
+
+<header>
+        <div class="logo">
+            <img src="logos.png" alt="Climate Action Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html"><b>Home</b></a></li>
+                <li class="active"><a href="gallery.html"><b>Gallery</b></a></li>
+                <li><a href="shop.html"><b>Shop</b></a></li>
+                <li><a href="profile.html"><b>User Profile</b></a></li>
+                <li><a href="feedback.html"><b>Feedback</b></a></li>
+                <li><a href="sitemap.html"><b>Sitemap</b></a></li>
+                <li><a href="team.html"><b>Team</b></a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+	<h1>Climate Action Gallery</h1>
+	<div class="gallery-container">
+		<div class="thumbnails" data-title="Renewable Energy" 
+            data-description="
+			<p>Renewable energy refers to sources of energy that are sustainable and/or endless. 
+			These sources of energy are usually more environmental friendly and beneficial for the preservation of the Earth's climate.</p>
+			<p>Examples include:</p>
+			<ul>
+				<li>Solar power</li>
+				<li>Wind energy</li>
+				<li>Hydroelectric power</li>
+				<li>Geothermal energy</li>
+			</ul>"
+            data-image="renewable-energy.jpeg">
+            
+            <img src="renewable-energy.jpeg" alt="Renewable Energy">
+        </div>
+		<div class="thumbnails" data-title="Sustainable Agriculture" 
+		data-description="
+			<p>Sustainable agriculture refers to farming methods which consider the usage of sustainable means and resources while minimizing environmental damage.</p>
+			<p>Methods of sustainable farming include: </p>
+			<ul>
+				<li>Livestock Integration</li>
+				<li>Organic Farming</li>
+				<li>Water Conservation Techniques</li>
+				<li>Crop Rotation</li>
+			</ul>
+		"
+		data-image="sustainable-agriculture.jpg">
+			
+			<img src="sustainable-agriculture.jpg" alt="Sustainable Agriculture">
+		</div>
+		<div class="thumbnails" data-title="Waste Management and Reduction" 
+		data-description="
+			<p>Waste management refers to the management and organization of waste materials. This is one of the more sustainable and global approaches to reduce Global Warming.</p>
+			<p>Waste management is most commonly interpreted using the R's: </p>
+			<ul>
+				<li>Re<b>use</b></li>
+				<li>Re<b>duce</b></li>
+				<li>Re<b>cycle</b></li>
+			</ul>
+		" 
+		data-image="waste-management.jpg">
+			
+			<img src="waste-management.jpg" alt="Waste Management">
+		</div>
+		<div class="thumbnails" data-title="Global Warming" 
+		data-description="
+		<p>Global warming refers to the global rise of average temperatures.</p>
+		<p>Effects of global warming include: </p>
+		<ul>
+			<li>Melting Ice Caps and Glaciers</li>
+			<li>Global rise of sea levels</li>
+			<li>Catastrophic weather events</li>
+		</ul>
+		" 
+		data-image="global-warming.jpg">
+			
+			<img src="global-warming.jpg" alt="Climate Policy & Advocacy">
+		</div>
+		<div class="thumbnails" data-title="Water Conservation Strategies" 
+		data-description="
+			<p>Water conservation strategies refers to strategies used to prevent excessive use or wastage of water in various sectors such as agriculture, industry, and urban areas</p>
+			<p>Methods include: </p>
+			<ul>
+				<li>Rainwater Harvesting</li>
+				<li>Greywater Recycling</li>
+			</ul>
+		" 
+		data-image="water-conservation.jpg">
+			
+			<img src="water-conservation.jpg" alt="Water Conservation Strategies">
+		</div>
+		<div class="thumbnails" data-title="Green Transportation" 
+		data-description="
+			<p>This refers to the use of environment friendly means of accommodation. Most commonly this refers to alternative resources to oil to fuel transportation</p>
+			<p>Alternative methods include:</p>
+			<ul>
+				<li>Electric cars - powered by lithium-ion batteries</li>
+				<li>Hydrogen cars - powered by hydrogen fuel cells</li>
+				<li>Solar powered transportation - powered by solar energy derived from the sun</li> 
+			</ul>
+		" 
+		data-image="green-transportation.jpeg">
+			
+			<img src="green-transportation.jpeg" alt="Green Transportation">
+		</div>
+		<div class="thumbnails" data-title="Ecosystem Conservation" 
+		data-description="
+			<p>Ecosystem conservation refers efforts to protect and restore ecosystems like forests, wetlands, and coral reefs. Each Ecosystem has a special contribution and impact on their respective climates.</p>
+			<p>Factors to consider about ecosystem conservation</p>
+			<ul>
+				<li>Biodiversity Preservation</li>
+				<li>Carbon Sequestration</li>
+				<li>Water and Air Quality</li>
+				<li>Climate Regulation</li>
+			</ul>
+		" 
+		data-image="ecosystem.jpg">
+			
+			<img src="ecosystem.jpg" alt="Ecosystem">
+		</div>
+		<div class="thumbnails" data-title="Carbon Footprint Reduction" 
+		data-description="
+			<p>Carbon Footprint Reduction refers to the methods focused on reducing individual and collective carbon footprints.</p>
+			<p>Methods include: </p>
+			<ul>
+				<li>Integration of energy efficient appliances</li>
+				<li>Integration of renewable energy resources</li>
+				<li>Alternative consumption tactics i.e. less meat consumption</li>
+			</ul>
+		" 
+		data-image="carbon-footprint.jpg">
+			
+			<img src="carbon-footprint.jpg" alt="Carbon Footprint Reduction">
+		</div>
+	</div>
+	
+	<div class="expanded-view" id="expandedView">
+		<div class="expanded-view-content">
+			<span class="close-btn" id="closeBtn">&times;</span>
+			<img id="expandedImg" src="" alt="">
+			<h2 id="expandedTitle"></h2>
+			<p id="expandedDescription"></p>
+		</div>
+	</div>
+	<footer>
+        
+        <p>Go Green, Breath Clean</p>
+        <p>&copy; 2024 Climate Action - SDG 13.</p>
+        <!-- link the page editor -->
+        <p><a href="student4.html">Page Editor</a></p>  
+    </footer>
+	
+	<script>
+	
+	document.addEventListener('DOMContentLoaded', () => {
+		let thumbNails = document.querySelectorAll('.thumbnails');
+		let expandedView = document.getElementById('expandedView');
+		let expandedImg = document.getElementById('expandedImg');
+		let expandedTitle = document.getElementById('expandedTitle');
+		let expandedDescription = document.getElementById('expandedDescription');
+		let closeBtn = document.getElementById('closeBtn');
+		
+		thumbNails.forEach(thumbnail => {
+			thumbnail.addEventListener('click', () => {
+				let imageSrc = thumbnail.getAttribute('data-image');
+				let title = thumbnail.getAttribute('data-title');
+				let description = thumbnail.getAttribute('data-description');
+				
+				expandedImg.src = imageSrc;
+				expandedTitle.textContent = title;
+				expandedDescription.innerHTML = description;
+				
+				expandedView.style.display = 'flex';
+			});
+		});	
+
+		closeBtn.addEventListener('click', () => {
+			expandedView.style.display = 'none';
+		});
+	});
+	</script>
+</body>
+</html>

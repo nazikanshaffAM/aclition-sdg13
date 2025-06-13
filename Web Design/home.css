@@ -1,0 +1,176 @@
+/* applies for body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    
+}
+
+/* applies for header */
+header {
+    background-color: transparent;
+    color: #fff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+/* applies for image in logo class */
+.logo img {
+    height: 80px;
+    margin-left: 20px;
+}
+/* create hover effect on logo */
+.logo:hover{
+    transform: rotatey(360deg);
+    transition: transform 0.6s;
+}
+
+
+/* applies for unordered list in nav tag */
+nav ul {
+    list-style: none;
+    display: flex;
+    margin-right: 20px;
+}
+/* applies for list tag in unordered list in nav tag */
+nav ul li {
+    margin: 10px;
+}
+
+
+/* applies for a tags in list tag in unordered list in nav tag */
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: 0.5s;
+}
+
+
+/* create hover effect for a tags in list tag in unordered list in nav tag */
+
+nav ul li a:hover {
+    background-color: #333;
+    border-radius: 100px;
+    
+}
+
+/* create active page indigator */
+nav ul li.active a {
+    border-bottom: solid ;
+    border-color: white;
+    border-radius: 100px;
+}
+
+/* applies for button */
+
+button {
+    background-color: transparent;
+    border-radius: 100px;
+    height: 60px;
+    width: 120px;
+    border-color: transparent;
+    
+}
+/* create hover effect for button */
+button:hover {
+    background-color: #333;
+   
+
+    
+
+}
+/* applies for b tags in button in main class */
+
+.main button b {
+   font-size: large;
+   color: white;
+   font-family: sans-serif;
+   
+ 
+   
+}
+
+/* applies for main class */
+
+.main {
+    text-align: center;
+    text-size-adjust: 24px;
+    margin: 20px 0;
+}
+/* applies for h1 tag in main class */
+
+.main h1 {
+    font-size: 160px;
+    color: white;
+    font-weight: 600;
+    transition: 0.5s;
+    margin: 2%;
+        
+}
+/* create hover effect for h1 tag */
+.main h1:hover{
+    -webkit-text-stroke: 3px #c19999 ;
+    color: transparent;
+}
+
+/* applies for p tag in main class */
+
+.main p {
+    font-size: 20px;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 2%;
+   
+}
+
+
+/* applies for footer */
+
+footer {
+    background-color: transparent;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* applies for video background */
+.back {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    
+}
+/* applies for overlay class */
+.overLay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(61, 57, 57, 0.5); 
+    z-index: -1;
+}
+
+/* keep the video backgroung apt */
+@media (min-aspect-ratio: 16/9){
+    .back{
+        width: 100%;
+        height: auto;
+    
+    }
+}
+@media (max-aspect-ratio: 16/9){
+    .back{
+        width: auto;
+        height: 100%;
+    
+    }
+}

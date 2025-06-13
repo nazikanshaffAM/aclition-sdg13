@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop </title>
+    <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logos.png" alt="Climate Action Logo">
+        </div>
+        <nav>
+            <ul>
+                <!-- to create navigation bar -->
+                <li><a href="home.html"><b>Home</b></a></li>
+                <li><a href="gallery.html"><b>Gallery</b></a></li>
+                <li class="active"><a href="shop.html"><b>Shop</b></a></li>
+                <li><a href="profile.html"><b>User Profile</b></a></li>
+                <li><a href="feedback.html"><b>Feedback</b></a></li>
+                <li><a href="sitemap.html"><b>Sitemap</b></a></li>
+                <li><a href="team.html"><b>Team</b></a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Shop </h1>
+    <div class="container">
+        <div class="product-grid">
+            <div class="product">
+                <img src="images/bag.jpg" alt="Bag">
+                <h2>Bag</h2>
+                <p>Rs 1600.00</p>
+                <button onclick="addToCart('Bag', 1600.00)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="images/cap.jpg" alt="Cap">
+                <h2>Cap</h2>
+                <p>Rs 2000.00</p>
+                <button onclick="addToCart('Cap', 2000.00)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="images/lunchbox.jpg" alt="Lunchbox">
+                <h2>Lunch Box</h2>
+                <p>Rs 2500.00</p>
+                <button onclick="addToCart('Lunchbox', 2500.00)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="images/socks.jpg" alt="Socks">
+                <h2>Socks</h2>
+                <p>Rs 500.00</p>
+                <button onclick="addToCart('Socks', 500.00)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="images/straw.jpg" alt="Straw">
+                <h2>Straw</h2>
+                <p>Rs 750.00</p>
+                <button onclick="addToCart('Straw', 750.00)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="images/thermal.jpg" alt="Thermal Bottle">
+                <h2>Thermal Bottle</h2>
+                <p>Rs 2500.00</p>
+                <button onclick="addToCart('Thermal Bottle', 2500.00)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="images/utensils.jpg" alt="Utensils">
+                <h2>Utensils</h2>
+                <p>Rs 1400.00</p>
+                <button onclick="addToCart('Utensils', 1400.00)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="images/tshirt.jpg" alt="tshirt">
+                <h2>T-Shirt</h2>
+                <p>Rs 2200.00</p>
+                <button onclick="addToCart('T-Shirt', 2200.00)">Add to Cart</button>
+            </div>
+        </div>
+        <div class="cart-container">
+            <h2>Cart</h2>
+            <div id="cart"></div>
+            <p id="total"></p>
+            <div class="cart-buttons">
+                <button id="clear-cart" onclick="clearCart()">Clear Cart</button>
+                <button id="checkout" onclick="showCheckout()">Checkout</button>
+            </div>
+        </div>
+    </div>
+    <!-- Checkout modal -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCheckoutModal()">&times;</span>
+            <h2>Checkout</h2>
+            <div id="order-summary"></div>
+            <form id="checkout-form" onsubmit="submitOrder(event)">
+                <h3>Payment Details</h3>
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" name="card-number">
+                <label for="expiry">Expiry Date (MM/YY):</label>
+                <input type="text" id="expiry" name="expiry" placeholder="MM/YY">
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv">
+                <h3>Billing Address</h3>
+                <label for="address">Address:</label>
+                <textarea id="address" name="address"></textarea>
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city">
+                <label for="zipcode">Zip Code:</label>
+                <input type="text" id="zipcode" name="zipcode">
+                <h3>Contact Details</h3>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone">
+                <button type="submit">Place Order</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="shop.js"></script>
+    <footer>
+            
+        <p>Go Green, Breath Clean</p>
+        <p>&copy; 2024 Climate Action - SDG 13.</p>
+        <p><a href="editor.html">Page Editor</a></p>  
+    </footer>
+</body>
+</html>

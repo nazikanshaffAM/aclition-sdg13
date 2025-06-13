@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link to external feed back style sheet -->
+    <link rel="stylesheet" href="feedback.css">
+    <!-- link to java script -->
+    <script src="feedback.js" defer></script>
+    <!-- title of the page -->
+    <title>Feedback Form</title>
+
+   <!-- link to a stylesheet to get the star image -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    
+</head>
+<body class="formbody">
+    <!-- set the video background -->
+    <video src="climate.mp4" autoplay loop muted plays-inline class="back"></video>
+    <div class="overLay"></div>
+
+
+<!-- set same header as home page -->
+    <header>
+        <div class="logo">
+            <img src="logos.png" alt="Climate Action Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html"><b>Home</b></a></li>
+                <li><a href="gallery.html"><b>Gallery</b></a></li>
+                <li><a href="shop.html"><b>Shop</b></a></li>
+                <li><a href="profile.html"><b>User Profile</b></a></li>
+                <li class="active"><a href="feedback.html"><b>Feedback</b></a></li>
+                <li><a href="sitemap.html"><b>Sitemap</b></a></li>
+                <li><a href="team.html"><b>Team</b></a></li>
+            </ul>
+        </nav>
+    </header>
+   
+<!-- feedback content  and input fields-->
+    <div class="container">
+        <form id="feedbackForm" class="comment-form">
+            <h5>Feedback</h5>
+            <div class="input-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="username">
+                <div class="error" id="nameError"></div>
+            </div>
+
+
+
+
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email">
+                <div class="error" id="emailError"></div>
+            </div>
+
+
+
+
+            <div class="input-group">
+                <label for="exp">Experience</label>
+                <input type="text" id="exp" name="experience">
+                <div class="error" id="expError"></div>
+            </div>
+
+
+
+
+            <div class="rating-box">
+                <label for="rating">How was your experience</label>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+
+
+
+
+            <div class="input-group">
+                <label for="improvements">Improvements should be made</label>
+                <textarea id="improvements" name="improvements"></textarea>
+                <div class="error" id="improvementsError"></div>
+            </div>
+
+        
+
+
+
+            <div class="input-group">
+                <label for="first-time-visiting">First time visiting:</label>
+                <div class="radio-group">
+                    <input type="radio" id="first-time-yes" name="first-time" value="yes">
+                    <label for="first-time-yes">Yes</label><br>
+                    <input type="radio" id="first-time-no" name="first-time" value="no">
+                    <label for="first-time-no">No</label>
+                </div>
+                <div class="error" id="firstTimeError"></div>
+            </div>
+            
+
+
+            
+            <div class="input-group">
+                <label for="informative-website">Was this website informative:</label>
+                <div class="radio-group">
+                    <input type="radio" id="informative-yes" name="informative" value="yes">
+                    <label for="informative-yes">Yes</label><br>
+                    <input type="radio" id="informative-no" name="informative" value="no">
+                    <label for="informative-no">No</label>
+                </div>
+                <div class="error" id="informativeError"></div>
+            </div>
+            
+            <button type="reset" class="btn btm-clear">Clear</button>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+
+        <div id="confirmation" class="hidden">
+            <h2>Thank you for your valuable feedback!</h2>
+            <p>Your feedback has been submitted successfully..</p>
+        </div>
+    </div>
+    <!-- set the same footer as home page -->
+    <footer>
+        
+        <p>Go Green, Breath Clean</p>
+        <p>&copy; 2024 Climate Action - SDG 13.</p>
+        <!-- link to the page editor -->
+        <p><a href="student2.html">Page Editor</a></p>  
+    </footer>
+
+
+   
+</body>
+</html>

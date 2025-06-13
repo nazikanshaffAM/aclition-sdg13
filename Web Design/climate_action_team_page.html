@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Page</title>
+    <style>
+	     body {
+		    font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		 }
+		 
+		 h1 {
+		    text-align: center;
+			color: #fff;
+		 }
+		 
+		 h2 {
+		    text-align: center;
+			color: #fff;
+		 }
+		 
+		 h3 {
+		    text-align: center;
+			color: #fff;
+		 }
+		 
+		 .team-container {
+		    display: flex;
+			justify-content: center;
+			padding: 20px;
+		 }
+		 
+		 .team-member {
+		    position: relative;
+			width: 200px;
+			margin: 20px;
+			text-align: center;
+			transition: all 0.3s ease-in-out;
+		 }
+		 
+		 .thumbnail {
+		    width: 100%;
+			overflow: hidden;
+			transition: all 0.3s ease-in-out;
+		 }
+		 
+		 .thumbnail-image {
+            width: 100%;
+            display: block;
+            transition: all 0.3s ease-in-out;
+	     }
+		 
+		 .details {
+		    display: none;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: left;
+		 }
+		 
+		 .team-member:hover .thumbnail-image {
+		    transform: scale(1.1);
+			
+		 }
+		 
+		 .team-member:hover .details {
+		    display: block;
+		 }
+		 
+		 .video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+		
+		.logo img {
+			height: 50px;
+			margin-left: 20px;
+		}
+		
+		header {
+			background-color: transparent;
+			color: #fff;
+			padding: 10px 0;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		nav ul {
+			list-style: none;
+			display: flex;
+			margin-right: 20px;
+		}
+
+		nav ul li {
+			margin: 0 10px;
+		}
+
+		nav ul li a {
+			color: #fff;
+			text-decoration: none;
+			padding: 5px 10px;
+		}
+
+		nav ul li a:hover {
+			background-color: #333;
+			border-radius: 5px;
+		}
+
+
+		nav ul li.active a {
+			border-bottom: solid ;
+			border-color: #333;
+			border-radius: 5px;
+		}
+	
+	</style>
+</head>
+<body>
+
+    <video class="video" autoplay loop muted>
+        <source src="climate.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+	<header>
+        <div class="logo">
+            <img src="logo.png" alt="Climate Action Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html"><b>Home</b></a></li>
+                <li><a href="WDD_CW_gallery.html"><b>Gallery</b></a></li>
+                <li><a href="shop.html"><b>Shop</b></a></li>
+                <li><a href="profile.html"><b>User Profile</b></a></li>
+                <li><a href="feedback.html"><b>Feedback</b></a></li>
+                <li class="active"><a href="WDD_CW_gallery.html"><b>Sitemap</b></a></li>
+                <li><a href="team.html"><b>Team</b></a></li>
+            </ul>
+        </nav>
+    </header>
+	
+
+    <h1>Our Team</h1>
+    <div class="team-container">
+        <div class="team-member">
+		    <h2>Nazik Anshaff</h2>
+            <div class="thumbnail">
+                <img src="pii.jpg" alt="Nazik Anshaff" class="thumbnail-image">
+            </div>
+            <div class="details">
+                <h2>20230009</h2>
+                <p><strong>Role:</strong> Team Leader/Student 2</p>
+                <p><strong>Tasks:</strong> Home Page + template + nav and Feedback </p>
+            </div>
+        </div>
+		<div class="team-member">
+		    <h2>Jalal Hushama</h2>
+            <div class="thumbnail">
+                <img src="jalal4.jpg" alt="Jalal Hushama" class="thumbnail-image">
+            </div>
+            <div class="details">
+                <h2>20230028</h2>
+                <p><strong>Role:</strong> Student 1</p>
+                <p><strong>Tasks:</strong> Splash Screen and Shop </p>
+            </div>
+	    </div>
+		<div class="team-member">
+		    <h2>Naizer Rishad</h2>
+            <div class="thumbnail">
+                <img src="naizer.jpg" alt="Naizer Rishad" class="thumbnail-image">
+            </div>
+            <div class="details">
+                <h2>20232474</h2>
+                <p><strong>Role:</strong> Student 4</p>
+                <p><strong>Tasks:</strong> Gallery and Sitemap </p>
+            </div>
+		</div>
+		<div class="team-member">
+		    <h2>Nazzer Rishad</h2>
+            <div class="thumbnail">
+                <img src="moi2.jpg" alt="Nazzer Rishad" class="thumbnail-image">
+            </div>
+            <div class="details">
+                <h2>20232473</h2>
+                <p><strong>Role:</strong> Student 3</p>
+                <p><strong>Tasks:</strong> User Profile and Team Page </p>
+            </div>
+		</div>		
+    </div>
+</body>
+</html>

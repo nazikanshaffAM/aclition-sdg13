@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Action User Profile Page</title>
+    <style>
+	
+	 /* styling for profile sections  */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+		
+        .profile {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+			color: #fff;
+        }
+        .prompt {
+            margin-bottom: 10px;
+			color: #fff;
+        }
+        .progress-bar {
+            height: 20px;
+            background-color: #f3f3f3;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+        .progress {
+            height: 100%;
+            background-color: #4caf50;
+            width: 0%;
+        }
+		
+		h1 {
+		   color: #fff;
+		}
+		
+		
+        .video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+        .overLay {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(61, 57, 57, 0.5); 
+            z-index: -1;
+        }
+
+		
+		.logo img {
+			height: 80px;
+			margin-left: 20px;
+		}
+		
+		header {
+			background-color: transparent;
+			color: #fff;
+			padding: 10px 0;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		nav ul {
+			list-style: none;
+			display: flex;
+			margin-right: 20px;
+		}
+
+		nav ul li {
+			margin: 0 10px;
+		}
+
+		nav ul li a {
+			color: #fff;
+			text-decoration: none;
+			padding: 5px 10px;
+		}
+
+		nav ul li a:hover {
+			background-color: #333;
+			border-radius: 100px;
+		}
+
+
+		nav ul li.active a {
+			border-bottom: solid ;
+			border-color: white;
+			border-radius: 100px;
+		}
+        footer {
+            background-color: transparent;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position:relative;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <video class="video" autoplay loop muted>
+        <source src="climate.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="overLay"></div>
+    
+	<header>
+        <div class="logo">
+            <img src="logos.png" alt="Climate Action Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html"><b>Home</b></a></li>
+                <li><a href="gallery.html"><b>Gallery</b></a></li>
+                <li><a href="shop.html"><b>Shop</b></a></li>
+                <li class="active"><a href="profile.html"><b>User Profile</b></a></li>
+                <li><a href="feedback.html"><b>Feedback</b></a></li>
+                <li><a href="sitemap.html"><b>Sitemap</b></a></li>
+                <li><a href="team.html"><b>Team</b></a></li>
+            </ul>
+        </nav>
+    </header>
+	
+	<h1>Climate Action User Profile</h1>
+	
+	<!-- progress bar-->
+	<div class="progress-bar">
+        <div class="progress" id="progress"></div>
+    </div>
+	
+	<!-- profile output -->
+    <div class="profile" id="profileOutput">
+        <h2>User Profile</h2>
+        <p id="profileName"></p>
+        <p id="profileCountry"></p>
+        <p id="profileAge"></p>
+        <p id="profileOccupation"></p>
+		<p id="profileRecycle"></p>
+		<p id="profileRenewableEnergy"></p>
+		<p id="profileGender"></p>
+		<p id="profileEnvironmentalCauses"></p>
+		<p id="profileClimateAdvocacy"></p>
+		<p id="profileClimateOrganization"></p>
+		<p id="profileEmail"></p>
+		<p id="profilePhoneNumber"></p>
+    </div>
+    
+	<!-- container for prompts -->
+    <div id="promptsContainer">
+	    
+		<!-- name -->
+        <div class="prompt" id="prompt1">
+            <label for="name">Name:</label>
+            <input type="text" id="name">
+            <button onclick="nextPrompt(1)">Next</button>
+        </div>
+		
+		<!-- country -->
+        <div class="prompt" id="prompt2" style="display:none;">
+            <label for="country">Country:</label>
+            <input type="text" id="country">
+            <button onclick="nextPrompt(2)">Next</button>
+        </div>
+		
+		<!-- age -->
+        <div class="prompt" id="prompt3" style="display:none;">
+            <label for="age"> Age:</label>
+            <input type="number" id="age">
+            <button onclick="nextPrompt(3)">Next</button>
+        </div>
+        
+		<!-- occupation -->
+        <div class="prompt" id="prompt4" style="display:none;">
+            <label for="occupation">What is your occupation?</label>
+            <input type="text" id="occupation">
+            <button onclick="nextPrompt(4)">Next</button>
+        </div>
+		
+		<!-- recycle -->
+        <div class="prompt" id="prompt5" style="display:none;">
+            <label>Do you recycle regularly?</label>
+            <div id="recycle">
+			     <label>
+				       <input type="radio" name="recycle" value="yes"> yes
+				 </label>
+				 <label>
+				       <input type="radio" name="recycle" value="no"> no
+				 </label>
+			</div>
+            <button onclick="nextPrompt(5)">Next</button>
+        </div>
+		
+		<!-- renewable energy -->
+        <div class="prompt" id="prompt6" style="display:none;">
+            <label>Do you use renewable energy sources?</label>
+            <div id="renewableEnergy">
+			     <label>
+				       <input type="radio" name="renewableEnergy" value="yes"> yes
+				 </label>
+				 <label>
+				       <input type="radio" name="renewableEnergy" value="no"> no
+				 </label>
+			</div>
+            <button onclick="nextPrompt(6)">Next</button>
+        </div>
+		
+		
+        <!-- gender -->
+        <div class="prompt" id="prompt7" style="display:none;">
+            <label>What is your gender?</label>
+            <div id="gender">
+			     <label>
+				       <input type="radio" name="gender" value="male"> male
+				 </label>
+				 <label>
+				       <input type="radio" name="gender" value="female"> female
+				 </label>
+			</div>
+            <button onclick="nextPrompt(7)">Next</button>
+        </div>
+		
+		<!-- environmental Causes -->
+        <div class="prompt" id="prompt8" style="display:none;">
+            <label for="environmentalCauses">Do you volunteer for any environmental causes?</label>
+            <input type="text" id="environmentalCauses">
+            <button onclick="nextPrompt(8)">Next</button>
+        </div>
+		
+		<!-- advocacy -->
+        <div class="prompt" id="prompt9" style="display:none;">
+            <label for="climateAdvocacies">Are you involved in any climate advocacy?</label>
+            <input type="text" id="climateAdvocacies">
+            <button onclick="nextPrompt(9)">Next</button>
+        </div>
+		
+		<!-- climate organizations -->
+        <div class="prompt" id="prompt10" style="display:none;">
+            <label for="climateOrganizations">Do you support any climate action organizations?</label>
+            <input type="text" id="climateOrganizations">
+            <button onclick="nextPrompt(10)">Next</button>
+        </div>
+		
+		<!-- email -->
+        <div class="prompt" id="prompt11" style="display:none;">
+            <label for="email">Email:</label>
+            <input type="email" id="email">
+			<span id="emailError" class="error-messages">Please enter a valid email</span>
+            <button onclick="nextPrompt(11)">Next</button>
+        </div>
+		
+		<!-- phone Number -->
+        <div class="prompt" id="prompt12" style="display:none;">
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" id="phoneNumber">
+			<span id="phoneError" class="error-messages">Please enter a valid phone number</span>
+            <button onclick="nextPrompt(12)">Finish</button>
+        </div>
+    </div>
+    <footer>
+        
+        <p>Go Green, Breath Clean</p>
+        <p>&copy; 2024 Climate Action - SDG 13.</p>
+        <!-- link the page editor -->
+        <p><a href="student3.html">Page Editor</a></p>  
+    </footer>
+
+
+    <script>
+	    //array to store prompt info
+        const prompts = [
+            { id: 'prompt1', key: 'name', output: 'profileName', label: 'Name: ' },
+            { id: 'prompt2', key: 'country', output: 'profileCountry', label: 'Country: ' },
+            { id: 'prompt3', key: 'age', output: 'profileAge', label: 'age: ' },
+            { id: 'prompt4', key: 'occupation', output: 'profileOccupation', label: 'Occupation: ' },
+            { id: 'prompt5', key: 'recycle', output: 'profileRecycle', label: 'Recycle Regularly:' },
+            { id: 'prompt6', key: 'renewableEnergy', output: 'profileRenewableEnergy', label: 'Renewable Energy Sources used: ' },
+            { id: 'prompt7', key: 'gender', output: 'profileGender', label: 'Gender: ' },
+            { id: 'prompt8', key: 'environmentalCauses', output: 'profileEnvironmentalCauses', label: 'Environmental Causes: ' },
+            { id: 'prompt9', key: 'climateAdvocacies', output: 'profileClimateAdvocacy', label: 'Climate Advocacies: ' },
+            { id: 'prompt10', key: 'climateOrganizations', output: 'profileClimateOrganization', label: 'Climate Organizations: ' },
+            { id: 'prompt11', key: 'email', output: 'profileEmail', label: 'Email: ' },
+            { id: 'prompt12', key: 'phoneNumber', output: 'profilePhoneNumber', label: 'Phone Number: ' },
+        ];
+
+        function nextPrompt(step) {
+            const prompt = prompts[step - 1];
+            let value;
+
+       
+	        //get value from radio buttons or text based input based on prompy type
+            if (prompt.key === 'gender' || prompt.key === 'recycle' || prompt.key === 'renewableEnergy') {
+                value = document.querySelector(`input[name="${prompt.key}"]:checked`)?.value;
+                if (!value) {
+                    alert('Please select an option.');
+                    return;
+                }
+            } else {
+                value = document.getElementById(prompt.key).value;
+            }
+
+            //validate email and phone number
+            if (prompt.key === 'email' && !validateEmail(value)) {
+                document.getElementById('emailError').style.display = 'block';
+                return;
+            } else if (prompt.key === 'email') {
+                document.getElementById('emailError').style.display = 'none';
+            }
+
+            if (prompt.key === 'phoneNumber' && !validatePhoneNumber(value)) {
+                document.getElementById('phoneError').style.display = 'block';
+                return;
+            } else if (prompt.key === 'phoneNumber') {
+                document.getElementById('phoneError').style.display = 'none';
+            }
+            
+			//update profile output
+            if (prompt.output) {
+                document.getElementById(prompt.output).innerText = prompt.label + value;
+            }
+
+
+            //hide current promt and show next one
+            document.getElementById(prompt.id).style.display = 'none';
+            if (step < prompts.length) {
+                document.getElementById(prompts[step].id).style.display = 'block';
+            }
+
+            currentStep = step;
+            updateProgress();
+        }
+
+
+        //updates width of progress bar
+        function updateProgress() {
+            const progress = (currentStep / prompts.length) * 100;
+            document.getElementById('progress').style.width = progress + '%';
+        }
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        function validatePhoneNumber(phone) {
+            const re = /^\d{10}$/;
+            return re.test(String(phone));
+        }
+
+    
+        
+    </script>
+</body>
+</html>

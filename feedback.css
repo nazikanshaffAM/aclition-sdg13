@@ -1,0 +1,185 @@
+/* applies for body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* applies for header */
+header {
+    background-color: transparent;
+    color: #fff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* applies for image in logo class */
+.logo img {
+    height: 80px;
+    margin-left: 50px;
+}
+
+/* create hover effect for logo class */
+.logo:hover {
+    transform: rotateY(360deg);
+    transition: transform 0.6s;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin-right: 20px;
+}
+
+nav ul li {
+    margin: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover {
+    background-color: #333;
+    border-radius: 100px;
+}
+
+nav ul li.active a {
+    border-bottom: solid;
+    border-color: white;
+    border-radius: 100px;
+}
+
+.back {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.overLay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(61, 57, 57, 0.5);
+    z-index: -1;
+}
+
+
+
+/* applies for container class */
+.container {
+    background: transparent;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto; /* Centered the container */
+}
+
+h5 {
+    color: #c19999;
+    text-align: center;
+    font-size: large;
+}
+
+
+/* applies for input-group and rating-box classes */
+.input-group, .rating-box {
+    margin-bottom: 15px;
+}
+
+
+/* applies for label */
+label {
+    display: block;
+    color: white;
+    margin-bottom: 5px;
+}
+
+input[type="text"], textarea, select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+
+/* applies for i tag in stars class */
+.stars i {
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.stars i.active {
+    color: gold;
+}
+
+.radio-group {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.hidden {
+    display: none;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+}
+
+
+/* applies for footer */
+footer {
+    background-color: transparent;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .back {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .back {
+        width: auto;
+        height: 100%;
+    }
+}
